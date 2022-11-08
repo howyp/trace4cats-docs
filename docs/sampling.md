@@ -86,13 +86,13 @@ In order to use the rate sampler, add the following dependency to your `build.sb
 ```
 
 You can use the sampler with the code block below. For a more complete example see
-[here](../modules/example/src/main/scala/io/janstenpickle/trace4cats/example/AdvancedExample.scala).
+[here](../modules/example/src/main/scala/trace4cats/example/AdvancedExample.scala).
 
 ```scala
 import io.janstenpickle.trace4cats.rate.sampling.RateSpanSampler
 import scala.concurrent.duration._
 
-RateSpanSampler.create[IO](bucketSize = 100, tokenRate = 10.millis)
+RateSpanSampler.create[IO](bucketSize = 100, tokenInterval = 10.millis)
 ```
 
 ## Dynamic Head Sampling
