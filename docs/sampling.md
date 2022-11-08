@@ -105,11 +105,11 @@ future, [Jaeger adaptive sampling](https://github.com/jaegertracing/jaeger/issue
 A couple of low level implementations are provided that may be integrated with dynamic configuration sources and used
 by higher level implementations.
 
-- [`HotSwapSpanSampler`](../modules/dynamic-sampling/src/main/scala/io/janstenpickle/trace4cats/sampling/dynamic/HotSwapSpanSampler.scala)
+- [`HotSwapSpanSampler`](https://github.com/trace4cats/trace4cats/blob/master/modules/core/src/main/scala/trace4cats/dynamic/HotSwapSpanSampler.scala)
   exposes methods for updating the sampler implementation at runtime. When updating, if the ID of the sampler does not
   change, the sampler will not get updated. This is indicated by the return type of `F[Boolean]` on the `updateSampler`
   method
-- [`PollingSpanSampler`](../modules/dynamic-sampling/src/main/scala/io/janstenpickle/trace4cats/sampling/dynamic/PollingSpanSampler.scala)
+- [`PollingSpanSampler`](https://github.com/trace4cats/trace4cats/blob/master/modules/dynamic-sampling/src/main/scala/io/janstenpickle/trace4cats/sampling/dynamic/PollingSpanSampler.scala)
   given some updating source at construction, polls it for updates and changes implementation accordingly
 
 To access these implementations, include the following module in your project:
@@ -124,8 +124,8 @@ This module provides an ADT called
 that allows the sampler type and configuration to be changed at runtime. Companions to the low level implementations
 described above are available in this module, which take `SamplerConfig` as an argument:
 
-- [`ConfiguredHotSwapSpanSampler`](../modules/dynamic-sampling-config/src/main/scala/io/janstenpickle/trace4cats/sampling/dynamic/config/ConfiguredHotSwapSpanSampler.scala)
-- [`ConfiguredPollingSpanSampler`](../modules/dynamic-sampling-config/src/main/scala/io/janstenpickle/trace4cats/sampling/dynamic/config/ConfiguredPollingSpanSampler.scala)
+- [`ConfiguredHotSwapSpanSampler`](https://github.com/trace4cats/trace4cats/blob/master/modules/dynamic-sampling-config/src/main/scala/io/janstenpickle/trace4cats/sampling/dynamic/config/ConfiguredHotSwapSpanSampler.scala)
+- [`ConfiguredPollingSpanSampler`](https://github.com/trace4cats/trace4cats/blob/master/modules/dynamic-sampling-config/src/main/scala/io/janstenpickle/trace4cats/sampling/dynamic/config/ConfiguredPollingSpanSampler.scala)
 
 To access these implementations, include the following module in your project:
 ```
@@ -136,7 +136,7 @@ To access these implementations, include the following module in your project:
 A couple of modules provide a solid implementation to allow samplers to be configured to runtime via HTTP endpoints. If
 you just want Http4s endpoints in order to include them alongside other routes then just use the following module and
 see
-[`SamplerHttpRoutes`](../modules/dynamic-sampling-http4s/src/main/scala/io/janstenpickle/trace4cats/sampling/dynamic/http4s/SamplerHttpRoutes.scala)
+[`SamplerHttpRoutes`](https://github.com/trace4cats/trace4cats/blob/master/modules/dynamic-sampling-http4s/src/main/scala/io/janstenpickle/trace4cats/sampling/dynamic/http4s/SamplerHttpRoutes.scala)
 to get started
 
 ```
